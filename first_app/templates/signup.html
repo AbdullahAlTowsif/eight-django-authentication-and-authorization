@@ -31,6 +31,8 @@
        {{fm.errors|striptags}}
        {% endfor %}
       <button class="btn btn-primary mt-3" type="submit">Submit</button>
+      <br>
+      <small>Already have an account <a href="{% url 'login' %}">Login</a></small>
     </form>
 
     {% endblock %}

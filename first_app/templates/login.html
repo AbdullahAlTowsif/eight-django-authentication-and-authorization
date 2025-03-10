@@ -4,11 +4,21 @@
 <form method="post" action="" style="width:50%; margin:auto;" novalidate>
     <h1>Login Page</h1>
      {% csrf_token %}
+     
+     {% comment %} This is when you use the below comment system to show error {% endcomment %}
+
+      {% comment %} {% if form.non_field_errors %}
+      {% for er in form.non_field_errors %}
+      <p class="bg-danger text-white p-3">{{er}}</p>
+      {% endfor %}
+      {% endif %} {% endcomment %}
+
      {% comment %} {% for fm in form %}
      {{fm.label_tag}}
      {{ fm }}
      {{fm.errors|striptags}}
      {% endfor %} {% endcomment %}
+
       {{form|crispy}}
     <button class="btn btn-primary mt-3" type="submit">Login</button>
 </form>
